@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98E507D297B4EBD002E3F64 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */; };
 		A99BD17C297AC7BA000884F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17B297AC7BA000884F1 /* AppDelegate.swift */; };
 		A99BD17E297AC7BA000884F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */; };
 		A99BD180297AC7BA000884F1 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17F297AC7BA000884F1 /* CurrentLocationViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		A99BD178297AC7BA000884F1 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99BD17B297AC7BA000884F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,13 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				A99BD17B297AC7BA000884F1 /* AppDelegate.swift */,
-				A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */,
-				A99BD17F297AC7BA000884F1 /* CurrentLocationViewController.swift */,
-				A99BD181297AC7BA000884F1 /* Main.storyboard */,
 				A99BD187297AC7BB000884F1 /* Assets.xcassets */,
-				A99BD189297AC7BB000884F1 /* LaunchScreen.storyboard */,
+				A99BD17F297AC7BA000884F1 /* CurrentLocationViewController.swift */,
 				A99BD18C297AC7BB000884F1 /* Info.plist */,
+				A99BD189297AC7BB000884F1 /* LaunchScreen.storyboard */,
+				A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */,
+				A99BD181297AC7BA000884F1 /* Main.storyboard */,
 				A99BD184297AC7BA000884F1 /* MyLocations.xcdatamodeld */,
+				A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				A99BD17C297AC7BA000884F1 /* AppDelegate.swift in Sources */,
 				A99BD186297AC7BA000884F1 /* MyLocations.xcdatamodeld in Sources */,
 				A99BD17E297AC7BA000884F1 /* SceneDelegate.swift in Sources */,
+				A98E507D297B4EBD002E3F64 /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

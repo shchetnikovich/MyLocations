@@ -29,6 +29,16 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         updateLabels()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+      super.viewWillDisappear(animated)
+      navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: - CLLocationManagerDelegate
     
     func locationManager(       //  Ловим ошибки
@@ -36,7 +46,6 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         didFailWithError error: Error
     ){
         print("didFailWithError \(error.localizedDescription)")
-        
         if (error as NSError).code == CLError.locationUnknown.rawValue {
             return
         }
@@ -74,6 +83,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             if !performingReverseGeocoding {
                 print("*** Преобразуем координаты")
                 performingReverseGeocoding = true
+                
                 geocoder.reverseGeocodeLocation(newLocation) { placemarks, error in
                     self.lastGeocodingError = error
                     if error == nil, let places = placemarks, !places.isEmpty {
@@ -104,11 +114,13 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             title: "Сервисы геолокации недоступны",
             message: "Пожалалуйста, включите GPS в настройках Вашего телефона.",
             preferredStyle: .alert)
+        
         let okAction = UIAlertAction(
             title: "OK",
             style: .default,
             handler: nil)
         alert.addAction(okAction)
+        
         present(alert, animated: true, completion: nil)
     }
     
@@ -156,8 +168,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     func startLocationManager() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
-            locationManager.desiredAccuracy =
-            kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             updatingLocation = true
             
@@ -175,9 +186,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             locationManager.stopUpdatingLocation()
             locationManager.delegate = nil
             updatingLocation = false
+            
             if let timer = timer {
-                  timer.invalidate()
-                }
+                timer.invalidate()
+            }
         }
     }
     
@@ -245,6 +257,5 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         }
         updateLabels()
     }
-    
 }
 

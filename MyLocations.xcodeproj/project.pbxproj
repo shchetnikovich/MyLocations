@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A94CF77F297C482500267209 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CF77E297C482500267209 /* CategoryPickerViewController.swift */; };
 		A98E507D297B4EBD002E3F64 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */; };
 		A99BD17C297AC7BA000884F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17B297AC7BA000884F1 /* AppDelegate.swift */; };
 		A99BD17E297AC7BA000884F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A94CF77E297C482500267209 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		A99BD178297AC7BA000884F1 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99BD17B297AC7BA000884F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A99BD181297AC7BA000884F1 /* Main.storyboard */,
 				A99BD184297AC7BA000884F1 /* MyLocations.xcdatamodeld */,
 				A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */,
+				A94CF77E297C482500267209 /* CategoryPickerViewController.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94CF77F297C482500267209 /* CategoryPickerViewController.swift in Sources */,
 				A99BD180297AC7BA000884F1 /* CurrentLocationViewController.swift in Sources */,
 				A99BD17C297AC7BA000884F1 /* AppDelegate.swift in Sources */,
 				A99BD186297AC7BA000884F1 /* MyLocations.xcdatamodeld in Sources */,

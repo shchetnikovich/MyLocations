@@ -171,6 +171,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bes-Xb-1oM" kind="show" identifier="PickCategory" id="8uM-g2-Mwl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -333,6 +336,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AzO-lu-dLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2972" y="-27.436281859070466"/>
+        </scene>
+        <!--Category Picker View Controller-->
+        <scene sceneID="Ouj-eP-h0B">
+            <objects>
+                <tableViewController id="bes-Xb-1oM" customClass="CategoryPickerViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jY3-nC-Mhc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="XJe-4N-Vvn" style="IBUITableViewCellStyleDefault" id="EuH-fZ-lb2">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EuH-fZ-lb2" id="1uj-jk-Ydl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XJe-4N-Vvn">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yet-tE-AqY" kind="unwind" identifier="PickedCategory" unwindAction="categoryPickerDidPickCategory:" id="yRf-y9-Epq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bes-Xb-1oM" id="ZaZ-vn-313"/>
+                            <outlet property="delegate" destination="bes-Xb-1oM" id="QAR-7p-bLT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="r8h-LU-c7y"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxh-pa-UnV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yet-tE-AqY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3871" y="-27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ESr-wN-7Je">

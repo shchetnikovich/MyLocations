@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import CoreData
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -22,6 +23,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var lastGeocodingError: Error?
     
     var timer: Timer?
+    
+    var managedObjectContext: NSManagedObjectContext?
     
     
     override func viewDidLoad() {
@@ -241,6 +244,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     LocationDetailsViewController
         controller.coordinate = location!.coordinate
         controller.placemark = placemark
+          controller.managedObjectContext = managedObjectContext
       }
     }
     

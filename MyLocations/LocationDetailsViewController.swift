@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import CoreData
 
 private let dateFormatter: DateFormatter = {        //  Ускорям работу приложения замыканием, сразу создаем экземпляр даты-пикера с предварительными стилями
     let formatter = DateFormatter()
@@ -25,6 +26,10 @@ class LocationDetailsViewController: UITableViewController {
     
     var categoryName = "Без категории"
     
+    var managedObjectContext: NSManagedObjectContext!
+    var date = Date()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +42,7 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             addressLabel.text = "Адрес не найден"
         }
-        dateLabel.text = format(date: Date())
+        dateLabel.text = format(date: date)
         
         // Скрываем keyboard
         let gestureRecognizer = UITapGestureRecognizer(
@@ -129,9 +134,24 @@ class LocationDetailsViewController: UITableViewController {
         let hudView = HudView.hud(inView: mainView, animated: true)
         hudView.text = "Успешно"
         
-        afterDelay(0.6) {
-            hudView.hide()
-            self.navigationController?.popViewController(animated: true)
+        let location = Location(context: managedObjectContext)
+        
+        location.locationDescription = descriptionTextView.text
+        location.category = categoryName
+        location.latitude = coordinate.latitude
+        location.longitude = coordinate.longitude
+        location.date = date
+        location.placemark = placemark
+        
+        do {
+            try managedObjectContext.save()
+            afterDelay(0.6)
+            {
+                hudView.hide()
+                self.navigationController?.popViewController(animated: true)
+            }
+        } catch {
+            fatalCoreDataError(error)
         }
     }
     

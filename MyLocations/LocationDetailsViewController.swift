@@ -38,8 +38,35 @@ class LocationDetailsViewController: UITableViewController {
             addressLabel.text = "Адрес не найден"
         }
         dateLabel.text = format(date: Date())
+        
+        // Скрываем keyboard
+        let gestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
     }
-
+    
+    // MARK: - Table View Delegates
+    
+    override func tableView(
+        _ tableView: UITableView,
+        willSelectRowAt indexPath: IndexPath
+    ) -> IndexPath? {
+        if indexPath.section == 0 || indexPath.section == 1 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
+    
+    override func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath ){
+            if indexPath.section == 0 && indexPath.row == 0 {
+                descriptionTextView.becomeFirstResponder()
+            }
+        }
     
     // MARK: - Helper Methods
     
@@ -70,6 +97,18 @@ class LocationDetailsViewController: UITableViewController {
         return text
     }
     
+    @objc func hideKeyboard(
+        _ gestureRecognizer: UIGestureRecognizer
+    ){
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        if indexPath != nil && indexPath!.section == 0 &&
+            indexPath!.row == 0 {
+            return
+        }
+        descriptionTextView.resignFirstResponder()
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender:
@@ -80,19 +119,27 @@ class LocationDetailsViewController: UITableViewController {
             controller.selectedCategoryName = categoryName
         }
     }
-
+    
     
     // MARK: - Actions
     
     @IBAction func done() {
-        navigationController?.popViewController(animated: true)
+        guard let mainView = navigationController?.parent?.view
+        else { return }
+        let hudView = HudView.hud(inView: mainView, animated: true)
+        hudView.text = "Успешно"
+        
+        afterDelay(0.6) {
+            hudView.hide()
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func cancel() {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func categoryPickerDidPickCategory( 
+    @IBAction func categoryPickerDidPickCategory(
         _ segue: UIStoryboardSegue
     ){
         let controller = segue.source as! CategoryPickerViewController

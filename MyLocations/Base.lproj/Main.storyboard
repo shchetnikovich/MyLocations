@@ -114,7 +114,80 @@
             </objects>
             <point key="canvasLocation" x="1991.2" y="-27.436281859070466"/>
         </scene>
-        <!--Tag Location-->
+        <!--Локации-->
+        <scene sceneID="igU-kB-gAZ">
+            <objects>
+                <tableViewController id="CCu-Te-DjC" customClass="LocationsViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ERp-nt-OaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="65" id="2th-HW-jPh" customClass="LocationCell" customModule="MyLocations" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2th-HW-jPh" id="RdN-my-OOZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqe-sg-TOg">
+                                            <rect key="frame" x="16" y="4" width="80" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpz-c5-GUR">
+                                            <rect key="frame" x="16" y="27" width="41" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Mpz-c5-GUR" firstAttribute="top" secondItem="Jqe-sg-TOg" secondAttribute="bottom" constant="2" id="0Nu-6q-bho"/>
+                                        <constraint firstItem="Jqe-sg-TOg" firstAttribute="top" secondItem="RdN-my-OOZ" secondAttribute="top" constant="4" id="9no-Z0-If6"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mpz-c5-GUR" secondAttribute="trailing" constant="8" id="ChX-d7-GX9"/>
+                                        <constraint firstItem="Jqe-sg-TOg" firstAttribute="leading" secondItem="RdN-my-OOZ" secondAttribute="leading" constant="16" id="fyO-Ix-uhg"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jqe-sg-TOg" secondAttribute="trailing" constant="8" id="xoe-B9-WQV"/>
+                                        <constraint firstItem="Mpz-c5-GUR" firstAttribute="leading" secondItem="RdN-my-OOZ" secondAttribute="leading" constant="16" id="xzs-iT-KjQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="Mpz-c5-GUR" id="zMS-Cl-bul"/>
+                                    <outlet property="descriptionLabel" destination="Jqe-sg-TOg" id="yqF-PN-v5R"/>
+                                    <segue destination="wEK-3G-RhG" kind="show" identifier="EditLocation" id="FFz-sw-QAO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CCu-Te-DjC" id="ENW-A2-NZ1"/>
+                            <outlet property="delegate" destination="CCu-Te-DjC" id="Bhi-hq-veD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Локации" id="ZoE-eQ-dQ5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWh-Jp-IbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1973.5999999999999" y="755.17241379310349"/>
+        </scene>
+        <!--Локации-->
+        <scene sceneID="q7a-ql-cTG">
+            <objects>
+                <navigationController id="6s6-Jr-5yt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Локации" id="tez-WN-zaM"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YTf-kd-hA4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CCu-Te-DjC" kind="relationship" relationship="rootViewController" id="Tj8-9R-Szg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9T-7g-5sg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="756"/>
+        </scene>
+        <!--Сохранить-->
         <scene sceneID="7uu-RH-e8b">
             <objects>
                 <tableViewController id="wEK-3G-RhG" customClass="LocationDetailsViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
@@ -312,7 +385,7 @@
                             <outlet property="delegate" destination="wEK-3G-RhG" id="b8u-q1-GBF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tag Location" id="pei-V1-DGE">
+                    <navigationItem key="navigationItem" title="Сохранить" id="pei-V1-DGE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5EK-Xp-yRF">
                             <connections>
                                 <action selector="cancel" destination="wEK-3G-RhG" id="NM6-4p-1vV"/>
@@ -391,17 +464,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="dhr-AP-Z0k" kind="relationship" relationship="viewControllers" id="C3p-cw-77L"/>
+                        <segue destination="6s6-Jr-5yt" kind="relationship" relationship="viewControllers" id="Hgx-LB-9ws"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRd-kL-3hK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="112.8" y="-27.436281859070466"/>
         </scene>
-        <!--Tag-->
+        <!--Сохранить-->
         <scene sceneID="pRe-mX-yXw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhr-AP-Z0k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tag" id="Iqe-E3-UoK"/>
+                    <tabBarItem key="tabBarItem" title="Сохранить" id="Iqe-E3-UoK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19g-Sy-r21">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -417,6 +491,9 @@
             <point key="canvasLocation" x="1052" y="-27.436281859070466"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FFz-sw-QAO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

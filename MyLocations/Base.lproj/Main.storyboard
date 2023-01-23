@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -169,6 +170,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SWh-Jp-IbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973.5999999999999" y="755.17241379310349"/>
+        </scene>
+        <!--Карта-->
+        <scene sceneID="dj4-KC-yys">
+            <objects>
+                <viewController id="i5v-pp-9XH" customClass="MapViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zGT-HV-qW9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orn-VU-snS">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dqQ-6J-3ap"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="orn-VU-snS" firstAttribute="top" secondItem="dqQ-6J-3ap" secondAttribute="top" id="F27-lq-EDu"/>
+                            <constraint firstItem="orn-VU-snS" firstAttribute="leading" secondItem="dqQ-6J-3ap" secondAttribute="leading" id="U5i-tS-xaB"/>
+                            <constraint firstItem="orn-VU-snS" firstAttribute="bottom" secondItem="dqQ-6J-3ap" secondAttribute="bottom" id="iCL-ll-wv2"/>
+                            <constraint firstItem="orn-VU-snS" firstAttribute="trailing" secondItem="dqQ-6J-3ap" secondAttribute="trailing" id="o1g-tT-3eg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Карта" id="O4i-yM-yis">
+                        <barButtonItem key="leftBarButtonItem" title="Локации" id="IIZ-Jl-DTI">
+                            <connections>
+                                <action selector="showLocations" destination="i5v-pp-9XH" id="GYG-di-Hxr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Пользователь" id="2zK-6h-wAf">
+                            <connections>
+                                <action selector="showUser" destination="i5v-pp-9XH" id="0gB-zg-q75"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="orn-VU-snS" id="yMl-Pd-fAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSC-bJ-yKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1991.2" y="-770.46476761619192"/>
         </scene>
         <!--Локации-->
         <scene sceneID="q7a-ql-cTG">
@@ -465,6 +508,7 @@
                     <connections>
                         <segue destination="dhr-AP-Z0k" kind="relationship" relationship="viewControllers" id="C3p-cw-77L"/>
                         <segue destination="6s6-Jr-5yt" kind="relationship" relationship="viewControllers" id="Hgx-LB-9ws"/>
+                        <segue destination="PSa-Vu-bSe" kind="relationship" relationship="viewControllers" id="PfU-gt-KYp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRd-kL-3hK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -489,6 +533,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnE-Ag-mMS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="-27.436281859070466"/>
+        </scene>
+        <!--Карта-->
+        <scene sceneID="zRf-eh-ISx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PSa-Vu-bSe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Карта" id="dsc-0E-Wp5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="G9W-qr-Ln0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i5v-pp-9XH" kind="relationship" relationship="rootViewController" id="Zu6-Hj-qyh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsj-uJ-OYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-770.46476761619192"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -182,6 +182,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orn-VU-snS">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i5v-pp-9XH" id="p1y-E4-kNR"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dqQ-6J-3ap"/>
@@ -207,6 +210,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="orn-VU-snS" id="yMl-Pd-fAe"/>
+                        <outlet property="view" destination="orn-VU-snS" id="6qI-qN-F0F"/>
+                        <segue destination="wEK-3G-RhG" kind="show" identifier="EditLocation" id="6cF-vg-Cr6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSC-bJ-yKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -296,22 +301,32 @@
                             <tableViewSection id="hVQ-Sp-Nvy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="ODc-ce-str">
-                                        <rect key="frame" x="0.0" y="223" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="223" width="375" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ODc-ce-str" id="xWZ-lo-PCR">
-                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348.5" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить фото" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnV-ik-0pd">
-                                                    <rect key="frame" x="16" y="14.5" width="89" height="15"/>
+                                                    <rect key="frame" x="16" y="15" width="89" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNU-qr-Zc4">
+                                                    <rect key="frame" x="121" y="10" width="219.5" height="24.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="2de-tg-5LY"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hnV-ik-0pd" firstAttribute="centerY" secondItem="xWZ-lo-PCR" secondAttribute="centerY" id="38g-fB-kGH"/>
+                                                <constraint firstItem="yNU-qr-Zc4" firstAttribute="top" secondItem="xWZ-lo-PCR" secondAttribute="top" constant="10" id="TJt-RF-Uli"/>
                                                 <constraint firstItem="hnV-ik-0pd" firstAttribute="leading" secondItem="xWZ-lo-PCR" secondAttribute="leadingMargin" id="UAz-1c-Pyc"/>
+                                                <constraint firstItem="yNU-qr-Zc4" firstAttribute="leading" secondItem="hnV-ik-0pd" secondAttribute="trailing" constant="16" id="cgh-1p-hfF"/>
+                                                <constraint firstAttribute="bottom" secondItem="yNU-qr-Zc4" secondAttribute="bottom" constant="10" id="mse-b1-HSc"/>
+                                                <constraint firstAttribute="trailing" secondItem="yNU-qr-Zc4" secondAttribute="trailing" constant="8" id="rQO-wO-Ln1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -320,7 +335,7 @@
                             <tableViewSection id="LkW-Hg-b6d">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="ZBT-SH-Fgk" detailTextLabel="ebK-rn-dzj" style="IBUITableViewCellStyleValue1" id="cku-SV-4Cv">
-                                        <rect key="frame" x="0.0" y="302.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="303.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cku-SV-4Cv" id="Ab6-HV-wJ4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -344,7 +359,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="oRq-yN-DsZ" detailTextLabel="Clt-mB-Tzo" style="IBUITableViewCellStyleValue1" id="lMl-hC-Ge6">
-                                        <rect key="frame" x="0.0" y="346" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="347" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lMl-hC-Ge6" id="naX-q0-ghj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -368,7 +383,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="SeS-Zi-AXN">
-                                        <rect key="frame" x="0.0" y="389.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="390.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SeS-Zi-AXN" id="gsC-HZ-fYK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -397,7 +412,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="b3G-dP-mLD" detailTextLabel="J6w-25-RQp" style="IBUITableViewCellStyleValue1" id="ljB-fj-Kmg">
-                                        <rect key="frame" x="0.0" y="433" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="434" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ljB-fj-Kmg" id="gGk-0d-qKi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -441,10 +456,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="hnV-ik-0pd" id="lSW-2q-eoR"/>
                         <outlet property="addressLabel" destination="YcE-yD-k6g" id="0hc-0F-KhI"/>
                         <outlet property="categoryLabel" destination="KMm-fi-4da" id="7A4-H5-y76"/>
                         <outlet property="dateLabel" destination="J6w-25-RQp" id="Lwl-Ch-jr6"/>
                         <outlet property="descriptionTextView" destination="pF6-I3-gyu" id="2iG-ya-l4u"/>
+                        <outlet property="imageHeight" destination="2de-tg-5LY" id="uHl-nd-4Tf"/>
+                        <outlet property="imageView" destination="yNU-qr-Zc4" id="cif-a8-aQ0"/>
                         <outlet property="latitudeLabel" destination="ebK-rn-dzj" id="VVp-Nx-36V"/>
                         <outlet property="longitudeLabel" destination="Clt-mB-Tzo" id="S9y-RI-c2s"/>
                     </connections>
@@ -555,7 +573,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FFz-sw-QAO"/>
+        <segue reference="mlG-G2-7k7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

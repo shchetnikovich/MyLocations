@@ -330,7 +330,9 @@
 				DEVELOPMENT_TEAM = 54R28VTTU4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Добавлять фото к Вашим локациям.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места. Ему нужен доступ к координатам GPS вашего местонахождения.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Добавлять фото к Вашим локациям.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -360,7 +362,9 @@
 				DEVELOPMENT_TEAM = 54R28VTTU4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Добавлять фото к Вашим локациям.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Это приложение позволяет отслеживать интересные места. Ему нужен доступ к координатам GPS вашего местонахождения.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Добавлять фото к Вашим локациям.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

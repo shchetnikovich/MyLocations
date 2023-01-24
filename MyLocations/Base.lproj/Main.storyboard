@@ -131,31 +131,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqe-sg-TOg">
-                                            <rect key="frame" x="16" y="4" width="85" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpz-c5-GUR">
-                                            <rect key="frame" x="16" y="27" width="41" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8sq-90-8hL">
+                                            <rect key="frame" x="76" y="13" width="85" height="39.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqe-sg-TOg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="85" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="адрес" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mpz-c5-GUR">
+                                                    <rect key="frame" x="0.0" y="22.5" width="40.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-Cn-FNU">
+                                            <rect key="frame" x="16" y="6.5" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="2e1-zx-Xfd"/>
+                                                <constraint firstAttribute="height" constant="52" id="oUw-9L-Br8"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Mpz-c5-GUR" firstAttribute="top" secondItem="Jqe-sg-TOg" secondAttribute="bottom" constant="2" id="0Nu-6q-bho"/>
-                                        <constraint firstItem="Jqe-sg-TOg" firstAttribute="top" secondItem="RdN-my-OOZ" secondAttribute="top" constant="4" id="9no-Z0-If6"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mpz-c5-GUR" secondAttribute="trailing" constant="8" id="ChX-d7-GX9"/>
-                                        <constraint firstItem="Jqe-sg-TOg" firstAttribute="leading" secondItem="RdN-my-OOZ" secondAttribute="leading" constant="16" id="fyO-Ix-uhg"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jqe-sg-TOg" secondAttribute="trailing" constant="8" id="xoe-B9-WQV"/>
-                                        <constraint firstItem="Mpz-c5-GUR" firstAttribute="leading" secondItem="RdN-my-OOZ" secondAttribute="leading" constant="16" id="xzs-iT-KjQ"/>
+                                        <constraint firstItem="aIJ-Cn-FNU" firstAttribute="leading" secondItem="RdN-my-OOZ" secondAttribute="leading" constant="16" id="8NI-uW-gM5"/>
+                                        <constraint firstItem="aIJ-Cn-FNU" firstAttribute="centerY" secondItem="RdN-my-OOZ" secondAttribute="centerY" id="MKD-ru-DkW"/>
+                                        <constraint firstItem="8sq-90-8hL" firstAttribute="centerY" secondItem="RdN-my-OOZ" secondAttribute="centerY" id="Zbp-Y8-yN7"/>
+                                        <constraint firstItem="8sq-90-8hL" firstAttribute="leading" secondItem="aIJ-Cn-FNU" secondAttribute="trailing" constant="8" id="zk4-7K-mzr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="Mpz-c5-GUR" id="zMS-Cl-bul"/>
                                     <outlet property="descriptionLabel" destination="Jqe-sg-TOg" id="yqF-PN-v5R"/>
+                                    <outlet property="photoImageView" destination="aIJ-Cn-FNU" id="C1e-Iu-Voj"/>
                                     <segue destination="wEK-3G-RhG" kind="show" identifier="EditLocation" id="FFz-sw-QAO"/>
                                 </connections>
                             </tableViewCell>
@@ -573,7 +584,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mlG-G2-7k7"/>
+        <segue reference="FFz-sw-QAO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">

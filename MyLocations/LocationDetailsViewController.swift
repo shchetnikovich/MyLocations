@@ -58,6 +58,11 @@ class LocationDetailsViewController: UITableViewController {
         
         if let location = locationToEdit {
             title = "Редактировать локацию"
+            if location.hasPhoto {      //  Показываем фото при редактировании
+                if let theImage = location.photoImage {
+                    show(image: theImage)
+                }
+            }
         }
         descriptionTextView.text = descriptionText
         categoryLabel.text = categoryName
@@ -192,12 +197,27 @@ class LocationDetailsViewController: UITableViewController {
         let hudView = HudView.hud(inView: mainView, animated: true)
         
         let location: Location
+        
         if let temp = locationToEdit {
             hudView.text = "Обновлено"
             location = temp
         } else {
             hudView.text = "Записано"
             location = Location(context: managedObjectContext)
+            location.photoID = nil
+        }
+        
+        if let image = image {      //  Сохраняем фото
+            if !location.hasPhoto {
+                location.photoID = Location.nextPhotoID() as NSNumber
+            }
+            if let data = image.jpegData(compressionQuality: 0.5) {
+                do {
+                    try data.write(to: location.photoURL, options: .atomic)
+                } catch {
+                    print("Error writing file: \(error)")
+                }
+            }
         }
         
         location.locationDescription = descriptionTextView.text
@@ -232,6 +252,8 @@ class LocationDetailsViewController: UITableViewController {
     }
     
 }
+
+//MARK: - Extension
 
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

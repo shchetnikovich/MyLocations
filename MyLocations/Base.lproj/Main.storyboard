@@ -208,12 +208,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="O4i-yM-yis">
-                        <barButtonItem key="leftBarButtonItem" title="Локации" id="IIZ-Jl-DTI">
+                        <barButtonItem key="leftBarButtonItem" title="Локации" image="Pin" id="IIZ-Jl-DTI">
                             <connections>
                                 <action selector="showLocations" destination="i5v-pp-9XH" id="GYG-di-Hxr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Пользователь" id="2zK-6h-wAf">
+                        <barButtonItem key="rightBarButtonItem" title="Пользователь" image="User" id="2zK-6h-wAf">
                             <connections>
                                 <action selector="showUser" destination="i5v-pp-9XH" id="0gB-zg-q75"/>
                             </connections>
@@ -233,7 +233,7 @@
         <scene sceneID="q7a-ql-cTG">
             <objects>
                 <navigationController id="6s6-Jr-5yt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Локации" id="tez-WN-zaM"/>
+                    <tabBarItem key="tabBarItem" title="Локации" image="Locations" id="tez-WN-zaM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YTf-kd-hA4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -548,7 +548,7 @@
         <scene sceneID="pRe-mX-yXw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dhr-AP-Z0k" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Сохранить" id="Iqe-E3-UoK"/>
+                    <tabBarItem key="tabBarItem" title="Сохранить" image="Tag" id="Iqe-E3-UoK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="19g-Sy-r21">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -567,7 +567,7 @@
         <scene sceneID="zRf-eh-ISx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PSa-Vu-bSe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Карта" id="dsc-0E-Wp5"/>
+                    <tabBarItem key="tabBarItem" title="Карта" image="Map" id="dsc-0E-Wp5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G9W-qr-Ln0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -584,9 +584,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FFz-sw-QAO"/>
+        <segue reference="6cF-vg-Cr6"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Locations" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+        <image name="Pin" width="24" height="24"/>
+        <image name="Tag" width="30" height="30"/>
+        <image name="User" width="24" height="24"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

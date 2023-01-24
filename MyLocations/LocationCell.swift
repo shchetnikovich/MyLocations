@@ -8,6 +8,10 @@ class LocationCell: UITableViewCell {
     @IBOutlet var addressLabel: UILabel!
     @IBOutlet var photoImageView: UIImageView!
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
     func thumbnail(for location: Location) -> UIImage {
         if location.hasPhoto, let image = location.photoImage {
             return image.resized(withBounds: CGSize(width: 52, height: 52))

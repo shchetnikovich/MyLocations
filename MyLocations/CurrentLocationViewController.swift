@@ -33,13 +33,13 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
-      navigationController?.isNavigationBarHidden = true
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-      navigationController?.isNavigationBarHidden = false
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -176,11 +176,11 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             updatingLocation = true
             
             timer = Timer.scheduledTimer(
-                  timeInterval: 60,
-                  target: self,
-                  selector: #selector(didTimeOut),
-                  userInfo: nil,
-                  repeats: false)
+                timeInterval: 60,
+                target: self,
+                selector: #selector(didTimeOut),
+                userInfo: nil,
+                repeats: false)
         }
     }
     
@@ -224,28 +224,28 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     @objc func didTimeOut() {
-      print("*** Время вышло")
-      if location == nil {
-        stopLocationManager()
-        lastLocationError = NSError(
-          domain: "MyLocationsErrorDomain",
-          code: 1,
-          userInfo: nil)
-        updateLabels()
-      }
+        print("*** Время вышло")
+        if location == nil {
+            stopLocationManager()
+            lastLocationError = NSError(
+                domain: "MyLocationsErrorDomain",
+                code: 1,
+                userInfo: nil)
+            updateLabels()
+        }
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender:
-    Any?) {
-      if segue.identifier == "TagLocation" {
-        let controller = segue.destination as!
-    LocationDetailsViewController
-        controller.coordinate = location!.coordinate
-        controller.placemark = placemark
-          controller.managedObjectContext = managedObjectContext
-      }
+                          Any?) {
+        if segue.identifier == "TagLocation" {
+            let controller = segue.destination as!
+            LocationDetailsViewController
+            controller.coordinate = location!.coordinate
+            controller.placemark = placemark
+            controller.managedObjectContext = managedObjectContext
+        }
     }
     
     // MARK: - Actions

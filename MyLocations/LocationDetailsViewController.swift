@@ -50,6 +50,8 @@ class LocationDetailsViewController: UITableViewController {
     
     var image: UIImage?
     
+    var observer: Any!      //  Hold reference to the observer
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,13 @@ class LocationDetailsViewController: UITableViewController {
             action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
+    }
+    
+    deinit {
+      print("*** deinit \(self)")
+      NotificationCenter.default.removeObserver(observer!)
     }
     
     // MARK: - Table View Delegates
@@ -147,6 +156,20 @@ class LocationDetailsViewController: UITableViewController {
         addPhotoLabel.text = ""
         imageHeight.constant = 260
         tableView.reloadData()
+    }
+    
+    func listenForBackgroundNotification() {        //  Handle background mode
+        observer = NotificationCenter.default.addObserver(
+            forName: UIScene.didEnterBackgroundNotification,
+            object: nil,
+            queue: OperationQueue.main) { [weak self] _ in
+                if let weakSelf = self {
+                    if weakSelf.presentedViewController != nil {
+                        weakSelf.dismiss(animated: false, completion: nil)
+                    }
+                    weakSelf.descriptionTextView.resignFirstResponder()
+                }
+            }
     }
     
     // MARK: - Navigation

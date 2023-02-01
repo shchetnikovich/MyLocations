@@ -10,6 +10,7 @@
 		A94CF77F297C482500267209 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CF77E297C482500267209 /* CategoryPickerViewController.swift */; };
 		A95A4B0F297D556A0042416F /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95A4B0E297D556A0042416F /* HudView.swift */; };
 		A98E507D297B4EBD002E3F64 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */; };
+		A997A530298AB6E800FD7811 /* ML_demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = A997A52F298AB6E800FD7811 /* ML_demo.gif */; };
 		A99BD17C297AC7BA000884F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17B297AC7BA000884F1 /* AppDelegate.swift */; };
 		A99BD17E297AC7BA000884F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */; };
 		A99BD180297AC7BA000884F1 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BD17F297AC7BA000884F1 /* CurrentLocationViewController.swift */; };
@@ -30,6 +31,7 @@
 		A94CF77E297C482500267209 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		A95A4B0E297D556A0042416F /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		A98E507C297B4EBD002E3F64 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		A997A52F298AB6E800FD7811 /* ML_demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ML_demo.gif; sourceTree = "<group>"; };
 		A99BD178297AC7BA000884F1 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A99BD17B297AC7BA000884F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A99BD17D297AC7BA000884F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,9 +61,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A997A52E298AB6C900FD7811 /* readme_img */ = {
+			isa = PBXGroup;
+			children = (
+				A997A52F298AB6E800FD7811 /* ML_demo.gif */,
+			);
+			path = readme_img;
+			sourceTree = "<group>";
+		};
 		A99BD16F297AC7BA000884F1 = {
 			isa = PBXGroup;
 			children = (
+				A997A52E298AB6C900FD7811 /* readme_img */,
 				A99BD17A297AC7BA000884F1 /* MyLocations */,
 				A99BD179297AC7BA000884F1 /* Products */,
 			);
@@ -158,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A997A530298AB6E800FD7811 /* ML_demo.gif in Resources */,
 				A99BD18B297AC7BB000884F1 /* LaunchScreen.storyboard in Resources */,
 				A99BD188297AC7BB000884F1 /* Assets.xcassets in Resources */,
 				A99BD183297AC7BA000884F1 /* Main.storyboard in Resources */,
